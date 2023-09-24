@@ -1,0 +1,63 @@
+---
+const nav = [
+  { name: 'quem somos', link: '#quem-somos' },
+  { name: 'nossa equipe', link: '#nossa-equipe' },
+  { name: 'nossos serviços', link: '#nossos-servicos' },
+  { name: 'fazer marcação', link: '#fazer-marcacao' }
+]
+---
+
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>CinderEla</title>
+  </head>
+
+  <body class="relative">
+    <header class="w-full p-6 fixed z-30 top-0 bg-transparent flex justify-between px-7 items-center">
+      <a href="">
+        <span class="font-serif font-medium text-lg">MadameNoir</span>
+      </a>
+
+      <nav class="flex gap-x-5">
+        {nav.map(({ name, link }) => <a href={link} class="p-1.5 rounded-md hover:bg-orange-300 transition-colors">{name}</a>)}
+      </nav>
+    </header>
+
+    <span class="absolute font-sans font-bold text-orange-300 text-[12rem] top-24 z-10">MADAME</span>
+    <span class="absolute font-sans font-bold text-orange-300 text-[12rem] top-60 right-3 z-10">NOIR</span>
+
+    <section class="w-screen h-screen flex">
+      <div class="flex-1 overflow-hidden h-full flex justify-center items-end">
+        <img 
+          src="images/hero-image.png" 
+          alt="imagem de uma mulher tocando no seu cabelo"
+          class="scale-125 z-20"
+        />
+      </div>
+
+      <div class="relative overflow-hidden flex-1 h-full flex flex-col justify-center items-center bg-orange-200">
+        <div class="font-serif text-5xl font-medium mx-24 z-20">
+          <h1 class="mb-2">
+            <span class="bg-orange-400 py-[0.2px] px-1 rounded-md">Eleve</span> o seu visual, eleve a sua vida
+          </h1>
+  
+          <span class="bg-orange-400 py-[0.2px] px-1 rounded-md">agora</span>.
+        </div>
+
+        <button class="flex gap-2 justify-center items-center mt-56 text-lg font-medium group z-20">
+          Fazer marcação 
+          <div class="rounded-md p-1 bg-orange-400 transition-colors group-hover:bg-transparent">
+            <img src="svg/arrow-right.svg" alt="seta apontando para a direita">
+          </div>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
