@@ -2,12 +2,11 @@
 const nav = [
   { name: 'quem somos', link: '#quem-somos' },
   { name: 'nossa equipe', link: '#nossa-equipe' },
-  { name: 'nossos serviços', link: '#nossos-servicos' },
-  { name: 'fazer marcação', link: '#fazer-marcacao' }
+  { name: 'nossos serviços', link: '#nossos-servicos' }
 ]
 ---
 
-<html lang="pt">
+<html lang="pt" class="scroll-mt-48 scrollbar-thin scrollbar-track-zinc-100 scrollbar-thumb-zinc-300 scrollbar-rounded-full" style="scroll-behavior:smooth; scroll-padding-top:5.2rem">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -16,24 +15,26 @@ const nav = [
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>CinderEla</title>
+    <title>MadameNoirBeauty 💅</title>
   </head>
 
-  <body class="relative">
-    <header class="w-full p-6 fixed z-30 top-0 bg-transparent flex justify-between px-7 items-center">
+  <body class="overflow-x-hidden">
+    <header data-is-scrolling="false" class="w-full p-6 data-[is-scrolling=true]:shadow-sm data-[is-scrolling=true]:shadow-[2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)] data-[is-scrolling=true]:bg-orange-200/80 data-[is-scrolling=true]:backdrop-blur-lg fixed z-30 top-0 transition-colors flex justify-between px-7 items-center">
       <a href="">
-        <span class="font-serif font-medium text-lg">MadameNoir</span>
+        <span class="font-serif font-medium text-lg">💅 MadameNoirBeauty</span>
       </a>
 
       <nav class="flex gap-x-5">
         {nav.map(({ name, link }) => <a href={link} class="p-1.5 rounded-md hover:bg-orange-300 transition-colors">{name}</a>)}
+        <button class="p-1.5 rounded-md active:scale-95 bg-orange-300 transition-all">fazer marcação</button>
       </nav>
     </header>
 
-    <span class="absolute font-sans font-bold text-orange-300 text-[12rem] top-24 z-10">MADAME</span>
-    <span class="absolute font-sans font-bold text-orange-300 text-[12rem] top-60 right-3 z-10">NOIR</span>
-
-    <section class="w-screen h-screen flex">
+    <section class="w-screen h-screen flex relative">
+      <div class="absolute -space-y-36 flex flex-col w-full h-fit top-1/2 pointer-events-none -translate-y-[53%] z-10 font-sans font-bold text-orange-300 text-[12rem]">
+        <div class="self-start">MADAME</div>
+        <div class="self-end">NOIR</div>
+      </div>
       <div class="flex-1 overflow-hidden h-full flex justify-center items-end">
         <img 
           src="images/hero-image.png" 
@@ -59,5 +60,78 @@ const nav = [
         </button>
       </div>
     </section>
+
+    <section id="quem-somos" class="flex w-screen">
+      <div class="w-1/2 bg-orange-400 py-16 h-screen px-8">
+        <h2 class="font-serif text-5xl font-medium mb-8">Quem somos?</h2>
+
+        <p class="text-lg">
+          <span class="bg-orange-300 py-[0.2px] px-1 rounded-md">Somos</span> uma equipe dedicada a realçar a 
+          sua beleza natural e aumentar sua autoestima. 
+          Com profissionais experientes e produtos de alta qualidade, 
+          estamos aqui para cuidar de você.
+        </p>
+
+        <p class="text-lg mt-6">
+          <span class="bg-orange-300 py-[0.2px] px-1 rounded-md">Somos</span> uma família. 
+          Valorizamos cada cliente como parte da nossa comunidade. 
+          Quando você entra pela porta, não é apenas um cliente, é parte da nossa família.
+        </p>
+      </div>
+
+      <div class="flex-1 relative">
+        <button class="group absolute z-10 -left-1/2 bottom-2 show-salon-location">
+          <img
+            src="images/maps-location.png" 
+            alt="imagem no mapa mostrando a localização do salão de beleza perto da rua 6 de novembro"
+            class="group-hover:border-orange-300 transition-colors aspect-video w-[28rem] border-4 rounded-md border-zinc-300"
+          >
+        </button>
+
+        <button class="group absolute bottom-14 -left-1/3 show-salon-outside">
+          <img
+            src="images/salon-outside.jpg" 
+            alt="imagem mostrando o salão pela parte de fora"
+            class="group-hover:border-orange-300 transition-colors aspect-video w-[28rem] border-4 rounded-md border-zinc-300"
+          >
+        </button>
+
+        <img 
+          src="images/about-us-image.jpg" 
+          alt="mulher recebendo tratamento de cabelo num salão de beleza"
+          class="h-screen w-full z-20"
+        >
+      </div>
+    </section>
   </body>
 </html>
+
+
+<script>
+  const header = document.querySelector('header') as HTMLHeadElement
+
+
+  window.addEventListener('scroll', () => {
+    if (Number(window.scrollY.toFixed(0)) > 0) {
+      header.setAttribute('data-is-scrolling', 'true')
+    }
+
+    else {
+      header.setAttribute('data-is-scrolling', 'false')
+    }
+  })
+
+
+  const salonLocationButton = document.querySelector('.show-salon-location') as HTMLButtonElement
+  const salonOutsideButton = document.querySelector('.show-salon-outside') as HTMLButtonElement
+
+  salonLocationButton.addEventListener('click', () => {
+    salonLocationButton.classList.add('z-10')
+    salonOutsideButton.classList.remove('z-10')
+  })
+
+  salonOutsideButton.addEventListener('click', () => {
+    salonOutsideButton.classList.add('z-10')
+    salonLocationButton.classList.remove('z-10')
+  })
+</script>
