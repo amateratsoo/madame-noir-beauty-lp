@@ -1,12 +1,13 @@
 ---
 const nav = [
   { name: 'quem somos', link: '#quem-somos' },
-  { name: 'nossa equipe', link: '#nossa-equipe' },
   { name: 'nossos serviços', link: '#nossos-servicos' }
 ]
+
+const mapsLocation = 'https://www.google.com/maps/place/Madame+Noir+Beauty+Set%C3%BAbal/@38.521197,-8.8536681,17z/data=!3m1!4b1!4m6!3m5!1s0xd19436b6a1d1961:0x60e0b6059742f825!8m2!3d38.521197!4d-8.8510878!16s%2Fg%2F11v672kw12?entry=ttu'
 ---
 
-<html lang="pt" class="scroll-mt-48 scrollbar-thin scrollbar-track-zinc-100 scrollbar-thumb-zinc-300 scrollbar-rounded-full" style="scroll-behavior:smooth; scroll-padding-top:5.2rem">
+<html lang="pt" class="scroll-mt-48 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-300 scrollbar-thumb-rounded-full" style="scroll-behavior:smooth; scroll-padding-top:5.2rem">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -15,7 +16,7 @@ const nav = [
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>MadameNoirBeauty 💅</title>
+    <title>💅 MadameNoirBeauty</title>
   </head>
 
   <body class="overflow-x-hidden">
@@ -62,7 +63,7 @@ const nav = [
     </section>
 
     <section id="quem-somos" class="flex w-screen">
-      <div class="w-1/2 bg-orange-400 py-16 h-screen px-8">
+      <div class="w-1/2 bg-orange-400 py-16 px-8 h-full">
         <h2 class="font-serif text-5xl font-medium mb-8">Quem somos?</h2>
 
         <p class="text-lg">
@@ -77,31 +78,65 @@ const nav = [
           Valorizamos cada cliente como parte da nossa comunidade. 
           Quando você entra pela porta, não é apenas um cliente, é parte da nossa família.
         </p>
+
+        <div class="mt-6 z-20 relative">
+          <a href={mapsLocation} target="_blank">
+            <img
+              src="images/maps-location.png" 
+              alt="imagem no mapa mostrando a localização do salão de beleza perto da rua 6 de novembro"
+              class="aspect-video w-[28rem] border-4 rounded-md border-zinc-300"
+            >
+          </a>
+
+          <div class="absolute top-0 -right-4 whitespace-nowrap flex">
+            <img src="svg/pointing-arrow.svg" alt="imagem de uma seta indicando onde clicar" class="-rotate-180">
+            <span class="font-serif font-medium text-xl w-fit h-fit bg-orange-600 p-1 rounded-md">estamos aqui 👋</span>
+          </div>
+        </div>
       </div>
 
-      <div class="flex-1 relative">
-        <button class="group absolute z-10 -left-1/2 bottom-2 show-salon-location">
-          <img
-            src="images/maps-location.png" 
-            alt="imagem no mapa mostrando a localização do salão de beleza perto da rua 6 de novembro"
-            class="group-hover:border-orange-300 transition-colors aspect-video w-[28rem] border-4 rounded-md border-zinc-300"
-          >
-        </button>
+      <div class="flex-1 bg-no-repeat bg-cover" style="background-image: url('images/about-us-image.jpg')" />
+    </section>
 
-        <button class="group absolute bottom-14 -left-1/3 show-salon-outside">
-          <img
-            src="images/salon-outside.jpg" 
-            alt="imagem mostrando o salão pela parte de fora"
-            class="group-hover:border-orange-300 transition-colors aspect-video w-[28rem] border-4 rounded-md border-zinc-300"
-          >
-        </button>
+    <article class="relative text-center py-7 bg-zinc-900 text-white text-4xl font-serif font-medium overflow-hidden">
+      <span class="z-30 inline">Somos a escolha certa para sí</span>
+      <img src="svg/waves.svg" class="-rotate-45 w-fit absolute h-full top-0 left-0 z-10" alt="">
+    </article>
 
-        <img 
-          src="images/about-us-image.jpg" 
-          alt="mulher recebendo tratamento de cabelo num salão de beleza"
-          class="h-screen w-full z-20"
-        >
+    <!-- <section id="nossos-servicos" class="flex w-screen">
+      <div class="w-1/2 bg-orange-300 py-16 h-screen px-8">
+        <h2 class="font-serif text-5xl font-medium mb-8">Nossos serviços</h2>
+
+        <p class="text-lg">
+          A nossa equipe especializada oferece uma vasta gama de serviços
+        </p>
       </div>
+
+      <div class="w-1/2 pt-16 h-screen px-8 flex flex-col overflow-hidden justify-between">
+        <div>
+          <h3 class="font-serif text-4xl font-medium mb-8">Preços</h3>
+
+          <p class="text-lg">unhas ------- desde 1500 euros</p>
+          <p class="text-lg">unhas ------- desde 1500 euros</p>
+          <p class="text-lg">unhas ------- desde 1500 euros</p>
+          <p class="text-lg">unhas ------- desde 1500 euros</p>
+        </div>
+
+        <div class="self-end mt-auto relative border-4 rounded-md border-zinc-300">
+          <img src="svg/waves.svg" class="absolute z-10 -rotate-45 -bottom-2 -right-24" alt="">
+          <img src="svg/star-bold-duotone.svg" class="absolute z-10 -top-8 -left-5 h-16" alt="">
+
+          <img 
+            src="images/services-image-1.jpg" 
+            alt="mulher recebendo tratamento de cabelo num salão de beleza"
+            class="h-72 aspect-square z-20 block rounded-sm"
+          >
+        </div>
+      </div>
+    </section> -->
+
+    <section id="nossos-servicos" class="h-screen bg-white">
+
     </section>
   </body>
 </html>
