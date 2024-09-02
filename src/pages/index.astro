@@ -1,172 +1,227 @@
 ---
 const nav = [
-  { name: 'quem somos', link: '#quem-somos' },
-  { name: 'nossos serviços', link: '#nossos-servicos' }
+  { name: 'quem somos', link: '#quem-somos' }
+  // { name: 'nossos serviços', link: '#nossos-servicos' }
 ]
 
-const mapsLocation = 'https://www.google.com/maps/place/Madame+Noir+Beauty+Set%C3%BAbal/@38.521197,-8.8536681,17z/data=!3m1!4b1!4m6!3m5!1s0xd19436b6a1d1961:0x60e0b6059742f825!8m2!3d38.521197!4d-8.8510878!16s%2Fg%2F11v672kw12?entry=ttu'
+const mapsLocation =
+  'https://www.google.com/maps/place/Madame+Noir+Beauty+Set%C3%BAbal/@38.521197,-8.8536681,17z/data=!3m1!4b1!4m6!3m5!1s0xd19436b6a1d1961:0x60e0b6059742f825!8m2!3d38.521197!4d-8.8510878!16s%2Fg%2F11v672kw12?entry=ttu'
+
+const services = [
+  {
+    name: 'alguma coisa 1',
+    description: 'outra coisa',
+    rating: 3,
+    startingPrice: 2000
+  },
+  {
+    name: 'alguma coisa 1',
+    description: 'outra coisa',
+    rating: 3,
+    startingPrice: 2000
+  },
+  {
+    name: 'alguma coisa 1',
+    description: 'outra coisa',
+    rating: 3,
+    startingPrice: 2000
+  }
+]
 ---
 
-<html lang="pt" class="scroll-mt-48 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-300 scrollbar-thumb-rounded-full" style="scroll-behavior:smooth; scroll-padding-top:5.2rem">
+<html
+  lang='pt'
+  class='scroll-mt-48 scrollbar-thin scrollbar-track-transparent scrollbar-thumb-zinc-300 scrollbar-thumb-rounded-full'
+  style='scroll-behavior:smooth; scroll-padding-top:5.2rem'
+>
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&family=Lora:wght@400;500&display=swap'
+      rel='stylesheet'
+    />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
     <title>💅 MadameNoirBeauty</title>
   </head>
 
-  <body class="overflow-x-hidden">
-    <header data-is-scrolling="false" class="w-full p-6 data-[is-scrolling=true]:shadow-sm data-[is-scrolling=true]:shadow-[2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)] data-[is-scrolling=true]:bg-orange-200/80 data-[is-scrolling=true]:backdrop-blur-lg fixed z-30 top-0 transition-colors flex justify-between px-7 items-center">
-      <a href="">
-        <span class="font-serif font-medium text-lg">💅 MadameNoirBeauty</span>
+  <body class='overflow-x-hidden'>
+    <header
+      data-is-scrolling='false'
+      class='w-full p-6 data-[is-scrolling=true]:shadow-sm data-[is-scrolling=true]:shadow-[2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02), 6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028), 12.5px 12.5px 10px rgba(0, 0, 0, 0.035), 22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042), 41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05), 100px 100px 80px rgba(0, 0, 0, 0.07)] data-[is-scrolling=true]:bg-orange-200/80 data-[is-scrolling=true]:backdrop-blur-lg fixed z-30 top-0 transition-colors flex justify-between px-7 items-center'
+    >
+      <a href=''>
+        <span class='font-serif font-medium text-lg'>💅 MadameNoirBeauty</span>
       </a>
 
-      <nav class="flex gap-x-5">
-        {nav.map(({ name, link }) => <a href={link} class="p-1.5 rounded-md hover:bg-orange-300 transition-colors">{name}</a>)}
-        <button class="p-1.5 rounded-md active:scale-95 bg-orange-300 transition-all">fazer marcação</button>
+      <nav class='flex gap-x-5'>
+        {
+          nav.map(({ name, link }) => (
+            <a
+              href={link}
+              class='p-1.5 rounded-md hover:bg-orange-300 transition-colors'
+            >
+              {name}
+            </a>
+          ))
+        }
+        <button
+          class='p-1.5 rounded-md active:scale-95 bg-orange-300 transition-all'
+          >fazer marcação</button
+        >
       </nav>
     </header>
 
-    <section class="w-screen h-screen flex relative">
-      <div class="absolute -space-y-36 flex flex-col w-full h-fit top-1/2 pointer-events-none -translate-y-[53%] z-10 font-sans font-bold text-orange-300 text-[12rem]">
-        <div class="self-start">MADAME</div>
-        <div class="self-end">NOIR</div>
+    <section class='w-screen h-screen flex relative'>
+      <div
+        class='absolute -space-y-36 flex flex-col w-full h-fit top-1/2 pointer-events-none -translate-y-[53%] z-10 font-sans font-bold text-orange-300 text-[12rem]'
+      >
+        <div class='self-start'>MADAME</div>
+        <div class='self-end'>NOIR</div>
       </div>
-      <div class="flex-1 overflow-hidden h-full flex justify-center items-end">
-        <img 
-          src="images/hero-image.png" 
-          alt="imagem de uma mulher tocando no seu cabelo"
-          class="scale-125 z-20"
+      <div class='flex-1 overflow-hidden h-full flex justify-center items-end'>
+        <img
+          src='images/hero-image.png'
+          alt='imagem de uma mulher tocando no seu cabelo'
+          class='scale-125 z-20'
         />
       </div>
 
-      <div class="relative overflow-hidden flex-1 h-full flex flex-col justify-center items-center bg-orange-200">
-        <div class="font-serif text-5xl font-medium mx-24 z-20">
-          <h1 class="mb-2">
-            <span class="bg-orange-400 py-[0.2px] px-1 rounded-md">Eleve</span> o seu visual, eleve a sua vida
+      <div
+        class='relative overflow-hidden flex-1 h-full flex flex-col justify-center items-center bg-orange-200'
+      >
+        <div class='font-serif text-5xl font-medium mx-24 z-20'>
+          <h1 class='mb-2'>
+            <span class='bg-orange-400 py-[0.2px] px-1 rounded-md'>Eleve</span>
+            o seu visual, eleve a sua vida
           </h1>
-  
-          <span class="bg-orange-400 py-[0.2px] px-1 rounded-md">agora</span>.
+
+          <span class='bg-orange-400 py-[0.2px] px-1 rounded-md'>agora</span>.
         </div>
 
-        <button class="flex gap-2 justify-center items-center mt-56 text-lg font-medium group z-20">
-          Fazer marcação 
-          <div class="rounded-md p-1 bg-orange-400 transition-colors group-hover:bg-transparent">
-            <img src="svg/arrow-right.svg" alt="seta apontando para a direita">
+        <button
+          class='flex gap-2 justify-center items-center mt-56 text-lg font-medium group z-20'
+        >
+          Fazer marcação
+          <div
+            class='rounded-md p-1 bg-orange-400 transition-colors group-hover:bg-transparent'
+          >
+            <img
+              src='svg/arrow-right.svg'
+              alt='seta apontando para a direita'
+            />
           </div>
         </button>
       </div>
     </section>
 
-    <section id="quem-somos" class="flex w-screen">
-      <div class="w-1/2 bg-orange-400 py-16 px-8 h-full">
-        <h2 class="font-serif text-5xl font-medium mb-8">Quem somos?</h2>
+    <section id='quem-somos' class='flex w-screen'>
+      <div class='w-1/2 bg-orange-400 py-16 px-8 h-full'>
+        <h2 class='font-serif text-5xl font-medium mb-8'>Quem somos?</h2>
 
-        <p class="text-lg">
-          <span class="bg-orange-300 py-[0.2px] px-1 rounded-md">Somos</span> uma equipe dedicada a realçar a 
-          sua beleza natural e aumentar sua autoestima. 
-          Com profissionais experientes e produtos de alta qualidade, 
-          estamos aqui para cuidar de você.
+        <p class='text-lg'>
+          <span class='bg-orange-300 py-[0.2px] px-1 rounded-md'>Somos</span>
+          uma equipe dedicada a realçar a sua beleza natural e aumentar sua autoestima.
+          Com profissionais experientes e produtos de alta qualidade, estamos aqui
+          para cuidar de você.
         </p>
 
-        <p class="text-lg mt-6">
-          <span class="bg-orange-300 py-[0.2px] px-1 rounded-md">Somos</span> uma família. 
-          Valorizamos cada cliente como parte da nossa comunidade. 
-          Quando você entra pela porta, não é apenas um cliente, é parte da nossa família.
+        <p class='text-lg mt-6'>
+          <span class='bg-orange-300 py-[0.2px] px-1 rounded-md'>Somos</span>
+          uma família. Valorizamos cada cliente como parte da nossa comunidade. Quando
+          você entra pela porta, não é apenas um cliente, é parte da nossa família.
         </p>
 
-        <div class="mt-6 z-20 relative">
-          <a href={mapsLocation} target="_blank">
+        <div class='mt-6 z-20 relative'>
+          <a href={mapsLocation} target='_blank'>
             <img
-              src="images/maps-location.png" 
-              alt="imagem no mapa mostrando a localização do salão de beleza perto da rua 6 de novembro"
-              class="aspect-video w-[28rem] border-4 rounded-md border-zinc-300"
-            >
+              src='images/maps-location.png'
+              alt='imagem no mapa mostrando a localização do salão de beleza perto da rua 6 de novembro'
+              class='aspect-video w-[28rem] border-4 rounded-md border-zinc-300'
+            />
           </a>
 
-          <div class="absolute top-0 -right-4 whitespace-nowrap flex">
-            <img src="svg/pointing-arrow.svg" alt="imagem de uma seta indicando onde clicar" class="-rotate-180">
-            <span class="font-serif font-medium text-xl w-fit h-fit bg-orange-600 p-1 rounded-md">estamos aqui 👋</span>
+          <div class='absolute top-0 -right-4 whitespace-nowrap flex'>
+            <img
+              src='svg/pointing-arrow.svg'
+              alt='imagem de uma seta indicando onde clicar'
+              class='-rotate-180'
+            />
+            <span
+              class='font-serif font-medium text-xl w-fit h-fit bg-orange-600 p-1 rounded-md'
+              >estamos aqui 👋</span
+            >
           </div>
         </div>
       </div>
 
-      <div class="flex-1 bg-no-repeat bg-cover" style="background-image: url('images/about-us-image.jpg')" />
+      <div
+        class='flex-1 bg-no-repeat bg-cover'
+        style="background-image: url('images/about-us-image.jpg')"
+      >
+      </div>
     </section>
 
-    <article class="relative text-center py-7 bg-zinc-900 text-white text-4xl font-serif font-medium overflow-hidden">
-      <span class="z-30 inline">Somos a escolha certa para sí</span>
-      <img src="svg/waves.svg" class="-rotate-45 w-fit absolute h-full top-0 left-0 z-10" alt="">
+    <article
+      class='relative text-center py-7 bg-zinc-900 text-white text-4xl font-serif font-medium overflow-hidden'
+    >
+      <span class='z-30 inline'>Somos a escolha certa para sí</span>
+      <img
+        src='svg/waves.svg'
+        class='-rotate-45 w-fit absolute h-full top-0 left-0 z-10'
+        alt=''
+      />
     </article>
 
-    <!-- <section id="nossos-servicos" class="flex w-screen">
-      <div class="w-1/2 bg-orange-300 py-16 h-screen px-8">
-        <h2 class="font-serif text-5xl font-medium mb-8">Nossos serviços</h2>
+    <!-- <section id='nossos-servicos' class='h-screen bg-white flex'>
+      <div class='flex-1'>
+        <h2 class='font-serif text-5xl font-medium my-8'>
+          Confira os nossos serviços
+        </h2>
 
-        <p class="text-lg">
-          A nossa equipe especializada oferece uma vasta gama de serviços
-        </p>
-      </div>
-
-      <div class="w-1/2 pt-16 h-screen px-8 flex flex-col overflow-hidden justify-between">
         <div>
-          <h3 class="font-serif text-4xl font-medium mb-8">Preços</h3>
+          {
+            services.map(service => {
+              return (
+                <article
+                  class='p-1 service-modal cursor-pointer border border-zinc-400 rounded-md'
+                  data-show-content='false'
+                >
+                  <span>{service.name}</span>
+                  <span>desde {service.startingPrice}</span>
 
-          <p class="text-lg">unhas ------- desde 1500 euros</p>
-          <p class="text-lg">unhas ------- desde 1500 euros</p>
-          <p class="text-lg">unhas ------- desde 1500 euros</p>
-          <p class="text-lg">unhas ------- desde 1500 euros</p>
-        </div>
-
-        <div class="self-end mt-auto relative border-4 rounded-md border-zinc-300">
-          <img src="svg/waves.svg" class="absolute z-10 -rotate-45 -bottom-2 -right-24" alt="">
-          <img src="svg/star-bold-duotone.svg" class="absolute z-10 -top-8 -left-5 h-16" alt="">
-
-          <img 
-            src="images/services-image-1.jpg" 
-            alt="mulher recebendo tratamento de cabelo num salão de beleza"
-            class="h-72 aspect-square z-20 block rounded-sm"
-          >
+                  <div class='data-[show-content=true]:block hidden'>
+                    {service.description}
+                  </div>
+                </article>
+              )
+            })
+          }
         </div>
       </div>
+
+      <div class='flex-1'></div>
     </section> -->
-
-    <section id="nossos-servicos" class="h-screen bg-white">
-
-    </section>
   </body>
 </html>
-
 
 <script>
   const header = document.querySelector('header') as HTMLHeadElement
 
+  const serviceModal = document.querySelector('.service-modal') as HTMLElement
+
+  // serviceModal.addEventListener('click', event => {
+  //   console.log(serviceModal.dataset.showContent)
+  // })
 
   window.addEventListener('scroll', () => {
     if (Number(window.scrollY.toFixed(0)) > 0) {
       header.setAttribute('data-is-scrolling', 'true')
-    }
-
-    else {
+    } else {
       header.setAttribute('data-is-scrolling', 'false')
     }
-  })
-
-
-  const salonLocationButton = document.querySelector('.show-salon-location') as HTMLButtonElement
-  const salonOutsideButton = document.querySelector('.show-salon-outside') as HTMLButtonElement
-
-  salonLocationButton.addEventListener('click', () => {
-    salonLocationButton.classList.add('z-10')
-    salonOutsideButton.classList.remove('z-10')
-  })
-
-  salonOutsideButton.addEventListener('click', () => {
-    salonOutsideButton.classList.add('z-10')
-    salonLocationButton.classList.remove('z-10')
   })
 </script>
